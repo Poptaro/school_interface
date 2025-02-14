@@ -1,12 +1,14 @@
 import csv
 import os.path
 from classes.person import Person
+import random
 
 class Student(Person):
 
     def __init__(self, name, age, password, role, school_id):
         super().__init__(name, age, password, role)
         self.school_id = school_id
+        
 
     @classmethod
     def objects(cls):
@@ -18,4 +20,7 @@ class Student(Person):
             for row in reader:
                 students.append(Student(**dict(row)))
         return students
+    
+    def __repr__(self):
+        return f"ID: {self.school_id}, Name: {self.name}, Age: {self.age}, Role: {self.role}"
 
