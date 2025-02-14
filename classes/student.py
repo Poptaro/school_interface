@@ -1,7 +1,6 @@
 import csv
 import os.path
 from classes.person import Person
-import random
 
 class Student(Person):
 
